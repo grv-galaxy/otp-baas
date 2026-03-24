@@ -19,7 +19,7 @@ const app = express();
 
 app.use(helmet());
 app.use(cors({
-  origin: env.CORS_ORIGINS.includes(',') ? env.CORS_ORIGINS.split(',') : [env.CORS_ORIGINS],
+  origin: process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : '*',
   credentials: true
 }));
 app.use(express.json({ limit: '10kb' }));
