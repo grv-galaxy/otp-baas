@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: otp-baas
+    env: node
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        sync: false
+      - key: PORT
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_ISSUER
+        sync: false
+      - key: JWT_AUDIENCE
+        sync: false
+      - key: JWT_EXPIRES_IN
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: OTP_EXPIRY_MINUTES
+        sync: false
+      - key: OTP_MAX_ATTEMPTS
+        sync: false
+      - key: OTP_RATE_LIMIT_COUNT
+        sync: false
+      - key: OTP_RATE_LIMIT_WINDOW_MINUTES
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: MC_AUTH_TOKEN
+        sync: false
+      - key: MC_CUSTOMER_ID
+        sync: false
+      - key: MC_SENDER_ID
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: MOCK_MODE
+        sync: false
